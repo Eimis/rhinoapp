@@ -1,0 +1,10 @@
+{% extends 'rhinoapp/base.html' %}
+{% load trans from i18n %}
+
+{% block content %}
+
+<h1>Dashboard</h1>
+
+<p>{% trans 'Hello,' %} <b>{{ user.first_name }}</b></p>
+
+{% endblock %}

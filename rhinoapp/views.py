@@ -1,5 +1,13 @@
-from django.shortcuts import render_to_response
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
 
 
-def home(request):
-    return render_to_response('rhinoapp/home.html')
+def landing(request):
+    return render(request, 'rhinoapp/landing.html', {})
+
+
+@login_required
+def dashboard(request):
+    return render(request, 'rhinoapp/dashboard.html', {
+        # 'user': user,
+    })
